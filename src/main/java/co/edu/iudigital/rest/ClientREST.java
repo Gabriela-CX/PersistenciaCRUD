@@ -34,9 +34,9 @@ public class ClientREST {
         return ResponseEntity.ok(clientService.getAllClientes());
     }
 
-    @DeleteMapping
-    private ResponseEntity<Void> eliminarCliente (@RequestBody Cliente cliente){
-        clientService.delete(cliente);
+    @DeleteMapping (value = "{cedulacliente}")
+    private ResponseEntity<Void> eliminarCliente (@PathVariable ("cedulacliente") Long cedulacliente){
+        clientService.delete(cedulacliente);
         return ResponseEntity.ok().build();
     }
 

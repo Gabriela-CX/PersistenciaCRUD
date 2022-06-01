@@ -22,8 +22,8 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public void delete (Cliente cliente){
-        clientRepository.delete(cliente);
+    public void delete (Long cedulacliente){
+        clientRepository.deleteById(cedulacliente);
     }
 
     public Optional<Cliente> findById (Long cedulacliente){
